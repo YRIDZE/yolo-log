@@ -143,28 +143,28 @@ func (l *Logger) Debug(msg ...interface{}) {
 	l.output(DEBUG, fmt.Sprint(msg...), blue)
 }
 func (l *Logger) Debugf(format string, msg ...interface{}) {
-	l.output(FATAL, fmt.Sprintf(format, msg...), blue)
+	l.output(DEBUG, fmt.Sprintf(format, msg...), blue)
 }
 
 func (l *Logger) Info(msg ...interface{}) {
 	l.output(INFO, fmt.Sprint(msg...), green)
 }
 func (l *Logger) Infof(format string, msg ...interface{}) {
-	l.output(FATAL, fmt.Sprintf(format, msg...), green)
+	l.output(INFO, fmt.Sprintf(format, msg...), green)
 }
 
 func (l *Logger) Error(msg ...interface{}) {
 	l.output(ERROR, fmt.Sprint(msg...), magenta)
 }
 func (l *Logger) Errorf(format string, msg ...interface{}) {
-	l.output(FATAL, fmt.Sprintf(format, msg...), magenta)
+	l.output(ERROR, fmt.Sprintf(format, msg...), magenta)
 }
 
 func (l *Logger) Warning(msg ...interface{}) {
 	l.output(WARNING, fmt.Sprint(msg...), yellow)
 }
 func (l *Logger) Warningf(format string, msg ...interface{}) {
-	l.output(FATAL, fmt.Sprintf(format, msg...), yellow)
+	l.output(WARNING, fmt.Sprintf(format, msg...), yellow)
 }
 
 func (l *Logger) Fatal(msg ...interface{}) {
