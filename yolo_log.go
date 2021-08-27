@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"path"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -102,6 +103,8 @@ func NewLogger(params LoggerParams) (*Logger, error) {
 
 func (l *Logger) getExecutionLocation() (fileName string, funcName string, line int) {
 	pc, fileName, line, ok := runtime.Caller(3)
+	fileName = path.Base(fileName)
+
 	if !ok {
 		fileName = "?"
 		line = 0
